@@ -1,17 +1,19 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 	
-	static int yearresult(int y) {
-		return(y%4==0 && y%100!=0 || y%400==0 ? 1 : 0);
+	static int year(int y) {
+		return(y%4==0 && y%100!=0 || y%400==0 ? 1:0);
 	}
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws NumberFormatException, IOException {
 
-		Scanner sc = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int year = sc.nextInt();
+		int y = Integer.parseInt(br.readLine());
 		
-		System.out.println(yearresult(year));
+		System.out.println(year(y));
 	}
 }
